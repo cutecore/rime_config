@@ -1,0 +1,107 @@
+# luna_pinyin.custom.yaml
+#
+# 【朙月拼音】模糊音定製模板
+#   佛振配製 :-)
+#
+# 位置：
+# ~/.config/ibus/rime  (Linux)
+# ~/Library/Rime  (Mac OS)
+# %APPDATA%\Rime  (Windows)
+#
+# 於重新部署後生效
+# 
+
+patch:
+  "key_binder/bindings":
+    - { when: paging, accept: bracketleft, send: Page_Up }   # []翻页
+    - { when: has_menu, accept: bracketright, send: Page_Down } # []翻页
+
+
+  # 半角 全角符号 
+  punctuator:
+    half_shape:
+      "," : { commit: "，" }
+      "." : { commit: "。" }
+      "<" : "<"
+      ">" : ">"
+      "?" : { commit: "?" }
+      ";" : { commit: ";" }
+      ":" : { commit: ":" }
+      "'" : "'"
+      "\"" : "\""
+      "\\" : "、"
+      "|" : "|"
+      "`" : "`"
+      "~" : "~"
+      "!" : { commit: "!" }
+      "@" : "@"
+      "#" : "#"
+      "%" : "%"
+      "$" : "$"
+      "^" : "^"
+      "&" : "&"
+      "*" : "*"
+      "(" : "("
+      ")" : ")"
+      "-" : "-"
+      "_" : "_"
+      "+" : "+"
+      "=" : "="
+      "[" : "["
+      "]" : "]"
+      "{" : "{"
+      "}" : "}"
+
+
+  # 'speller/algebra':
+  #   - erase/^xx$/                      # 第一行保留
+
+  #   # 模糊音定義
+  #   # 需要哪組就刪去行首的 # 號，單雙向任選
+  #   # - derive/^([zcs])h/$1/             # zh, ch, sh => z, c, s
+  #   - derive/^([zcs])([^h])/$1h$2/     # z, c, s => zh, ch, sh
+
+  #   # 模糊音定義先於簡拼定義，方可令簡拼支持以上模糊音
+  #   - abbrev/^([a-z]).+$/$1/           # 簡拼（首字母）
+  #   - abbrev/^([zcs]h).+$/$1/          # 簡拼（zh, ch, sh）
+
+
+
+  # 模糊拼音 和 双拼定义 
+  speller:
+    alphabet: zyxwvutsrqponmlkjihgfedcba
+    delimiter: " '"
+    algebra:
+      - erase/^xx$/
+      - derive/^([zcs])h/$1/
+      - derive/^([zcs])([^h])/$1h$2/
+      - derive/^([jqxy])u$/$1v/
+      - derive/^([aoe])([ioun])$/$1$1$2/
+      - xform/^([aoe])(ng)?$/$1$1$2/
+      - xform/iu$/Q/
+      - xform/(.)ei$/$1W/
+      - xform/uan$/R/
+      - xform/[uv]e$/T/
+      - xform/un$/Y/
+      - xform/^sh/U/
+      - xform/^ch/I/
+      - xform/^zh/V/
+      - xform/uo$/O/
+      - xform/ie$/P/
+      - xform/i?ong$/S/
+      - xform/ing$|uai$/K/
+      - xform/(.)ai$/$1D/
+      - xform/(.)en$/$1F/
+      - xform/(.)eng$/$1G/
+      - xform/[iu]ang$/L/
+      - xform/(.)ang$/$1H/
+      - xform/ian$/M/
+      - xform/(.)an$/$1J/
+      - xform/(.)ou$/$1Z/
+      - xform/[iu]a$/X/
+      - xform/iao$/N/
+      - xform/(.)ao$/$1C/
+      - xform/ui$/V/
+      - xform/in$/B/
+      - xlit/QWRTYUIOPSDFGHJKLZXCVBNM/qwrtyuiopsdfghjklzxcvbnm/
+      #- abbrev/^(.).+$/$1/

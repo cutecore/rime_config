@@ -1,0 +1,12 @@
+customization:
+  distribution_code_name: Weasel
+  distribution_version: 0.15.0.0
+  generator: "Rime::SwitcherSettings"
+  modified_time: "Wed Jun 28 11:17:44 2023"
+  rime_version: 1.8.5
+patch:
+  schema_list:
+    - {schema: double_pinyin_flypy}
+  "switcher/hotkeys":  
+    - "Control+grave" 
+    - F4
