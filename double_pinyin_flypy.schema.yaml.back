@@ -53,8 +53,6 @@ speller:
   delimiter: " '"
   algebra:
     - erase/^xx$/
-    - derive/^([zcs])h/$1/ #模糊拼音 
-    - derive/^([zcs])([^h])/$1h$2/ # 模糊拼音
     - derive/^([jqxy])u$/$1v/
     - derive/^([aoe])([ioun])$/$1$1$2/
     - xform/^([aoe])(ng)?$/$1$1$2/

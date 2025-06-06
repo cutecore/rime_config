@@ -1,12 +1,15 @@
 customization:
   distribution_code_name: Weasel
-  distribution_version: 0.15.0.0
+  distribution_version: 0.17.4
   generator: "Rime::SwitcherSettings"
-  modified_time: "Wed Jun 28 11:17:44 2023"
-  rime_version: 1.8.5
+  modified_time: "Fri Jun  6 16:42:35 2025"
+  rime_version: 1.13.1
 patch:
+  key_binder:
+    bindings: 
+      - { when: composing, accept: bracketleft, send: Page_Up }
+      - { when: composing, accept: bracketright, send: Page_Down }
+      - { when: composing, accept: comma, send: Page_Up }
+      - { when: composing, accept: period, send: Page_Down }
   schema_list:
     - {schema: double_pinyin_flypy}
-  "switcher/hotkeys":  
-    - "Control+grave" 
-    - F4
